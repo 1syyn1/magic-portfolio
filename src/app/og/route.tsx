@@ -1,5 +1,4 @@
 import { ImageResponse } from "next/og";
-import { baseURL } from "@/app/resources";
 
 export const runtime = "edge";
 
@@ -17,10 +16,10 @@ export async function GET(request: Request) {
         display: "flex",
         width: "100%",
         height: "100%",
-        padding: "8rem",
         background: "#151515",
         justifyContent: "center",
         alignItems: "center",
+        textAlign: "center",
         fontFamily: "Inter",
         color: "white",
       }}
