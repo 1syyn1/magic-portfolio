@@ -45,6 +45,7 @@ const LoginPage = () => {
         {/* Reverted Input Fields to their previous look */}
         <RevealFx translateY="12" delay={0.4} fillWidth horizontal="center" paddingBottom="m">
           <Input
+            id="email"
             label="Email Address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -54,6 +55,7 @@ const LoginPage = () => {
 
         <RevealFx translateY="16" delay={0.6} fillWidth horizontal="center" paddingBottom="m">
           <Input
+            id="password"
             label="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -88,7 +90,7 @@ const LoginPage = () => {
           </Button>
         </RevealFx>
 
-        <RevealFx translateY="28" delay={1.2} fillWidth horizontal="center" paddingBottom="m">
+        <RevealFx translateY="20" delay={1.2} fillWidth horizontal="center" paddingBottom="m">
           <Text variant="body-default-m" style={{ color: "#6c757d" }}>
             Forgot your password? <a href="/reset-password">Reset it here.</a>
           </Text>
