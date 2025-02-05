@@ -37,7 +37,7 @@ export default function KeyRedemptionPage() {
 
         // Show the message for 1 second before redirecting to the download link
         setTimeout(() => {
-          window.location.href = `/files/Installer.exe`; // Redirect to the file download
+          window.location.href = `/files/Void.zip`; // Redirect to the file download
         }, 1000); // 1 second delay for the download redirection
       } else {
         setIsValidKey(false);
@@ -113,6 +113,28 @@ export default function KeyRedemptionPage() {
           >
             {isValidKey ? (
               "Purchased 02/05/25 for $4.99 · void6c8de65cfa014cd7cca3ae369de910d6"
+            ) : (
+              <>
+              </>
+            )}
+          </Text>
+        </RevealFx>
+
+        <RevealFx
+          translateY="8"
+          delay={0.2}
+          fillWidth
+          horizontal="center"
+          paddingBottom="m"
+        >
+          <Text
+            wrap="balance"
+            onBackground="neutral-weak"
+            variant="heading-default-s"
+            paddingBottom="m"
+          >
+            {isValidKey ? (
+              "The Password is: Void"
             ) : (
               <>
               </>
