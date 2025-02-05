@@ -1,62 +1,40 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  get name() {
-    return `${this.firstName} ${this.lastName}`;
-  },
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Subscribe to the Void Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      Stay up-to-date with patches, bug fixes and security improvements.
     </>
   ),
 };
 
 const social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
   {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "X",
-    icon: "x",
-    link: "",
+    name: "Discord",
+    icon: "discord",
+    link: "https://discord.gg/void",
   },
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:support@getvoid.store",
   },
 ];
 
 const home = {
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  title: `Void`,
+  description: `The most powerful external exploit.`,
+  headline: <>The most powerful external exploit.</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      Welcome to <InlineCode>Void</InlineCode>, the most powerful and undetectable 
+      <br /> Roblox exploit built for seamless execution and limitless possibilities.
     </>
   ),
 };
@@ -70,7 +48,7 @@ const about = {
     subItems: false,
   },
   avatar: {
-    display: true,
+    display: false,
   },
   calendar: {
     display: true,

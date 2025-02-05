@@ -7,14 +7,24 @@ import { Fade, Flex, Line, ToggleButton } from "@/once-ui/components";
 import styles from "@/components/Header.module.scss";
 
 import { routes, display } from "@/app/resources";
-import { person, home, about, blog, work, gallery } from "@/app/resources/content";
+import {
+  person,
+  home,
+  about,
+  blog,
+  work,
+  gallery,
+} from "@/app/resources/content";
 
 type TimeDisplayProps = {
   timeZone: string;
   locale?: string; // Optionally allow locale, defaulting to 'en-GB'
 };
 
-const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
+const TimeDisplay: React.FC<TimeDisplayProps> = ({
+  timeZone,
+  locale = "en-GB",
+}) => {
   const [currentTime, setCurrentTime] = useState("");
 
   useEffect(() => {
@@ -48,7 +58,15 @@ export const Header = () => {
   return (
     <>
       <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
-      <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
+      <Fade
+        show="s"
+        fillWidth
+        position="fixed"
+        bottom="0"
+        to="top"
+        height="80"
+        zIndex={9}
+      />
       <Flex
         fitHeight
         className={styles.position}
@@ -58,7 +76,12 @@ export const Header = () => {
         padding="8"
         horizontal="center"
       >
-        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
+        <Flex
+          paddingLeft="12"
+          fillWidth
+          vertical="center"
+          textVariant="body-default-s"
+        >
           {display.location && <Flex hide="s">{person.location}</Flex>}
         </Flex>
         <Flex fillWidth horizontal="center">
@@ -72,74 +95,54 @@ export const Header = () => {
           >
             <Flex gap="4" vertical="center" textVariant="body-default-s">
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                <ToggleButton
+                  prefixIcon="home"
+                  href="/"
+                  selected={pathname === "/"}
+                />
               )}
               <Line vert maxHeight="24" />
-              {routes["/about"] && (
+              {routes["/purchase"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="shop"
+                    href="/purchase"
+                    label="Purchase"
+                    selected={pathname === "/purchase"}
+                  />
+                </>
+              )}
+              {routes["/redeem"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="key"
+                    href="/redeem"
+                    label="Redeem"
+                    selected={pathname === "/redeem"}
+                  />
+                </>
+              )}
+              {routes["/login"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="person"
-                    href="/about"
-                    label={about.label}
-                    selected={pathname === "/about"}
-                  />
-                  <ToggleButton
-                    className="s-flex-show"
-                    prefixIcon="person"
-                    href="/about"
-                    selected={pathname === "/about"}
+                    href="/login"
+                    label="Login"
+                    selected={pathname === "/login"}
                   />
                 </>
               )}
-              {routes["/work"] && (
+              {routes["/discord"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
-                    prefixIcon="grid"
-                    href="/work"
-                    label={work.label}
-                    selected={pathname.startsWith("/work")}
-                  />
-                  <ToggleButton
-                    className="s-flex-show"
-                    prefixIcon="grid"
-                    href="/work"
-                    selected={pathname.startsWith("/work")}
-                  />
-                </>
-              )}
-              {routes["/blog"] && (
-                <>
-                  <ToggleButton
-                    className="s-flex-hide"
-                    prefixIcon="book"
-                    href="/blog"
-                    label={blog.label}
-                    selected={pathname.startsWith("/blog")}
-                  />
-                  <ToggleButton
-                    className="s-flex-show"
-                    prefixIcon="book"
-                    href="/blog"
-                    selected={pathname.startsWith("/blog")}
-                  />
-                </>
-              )}
-              {routes["/gallery"] && (
-                <>
-                  <ToggleButton
-                    className="s-flex-hide"
-                    prefixIcon="gallery"
-                    href="/gallery"
-                    label={gallery.label}
-                    selected={pathname.startsWith("/gallery")}
-                  />
-                  <ToggleButton
-                    className="s-flex-show"
-                    prefixIcon="gallery"
-                    href="/gallery"
-                    selected={pathname.startsWith("/gallery")}
+                    prefixIcon="discord"
+                    href="https://discord.gg/void"
+                    label="Discord"
+                    selected={pathname === "/discord"}
                   />
                 </>
               )}
@@ -153,9 +156,7 @@ export const Header = () => {
             vertical="center"
             textVariant="body-default-s"
             gap="20"
-          >
-            <Flex hide="s">{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
-          </Flex>
+          ></Flex>
         </Flex>
       </Flex>
     </>

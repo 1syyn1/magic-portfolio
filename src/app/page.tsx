@@ -75,44 +75,38 @@ export default function Home() {
             </Text>
           </RevealFx>
           <RevealFx translateY="12" delay={0.4} horizontal="start">
+          <Flex gap="16">
             <Button
-              id="about"
+              id="purchase"
               data-border="rounded"
-              href="/about"
+              href="/purchase"
               variant="secondary"
-              size="m"
+              size="l"
               arrowIcon
             >
               <Flex gap="8" vertical="center">
-                {about.avatar.display && (
-                  <Avatar
-                    style={{ marginLeft: "-0.75rem", marginRight: "0.25rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
+                Purchase
               </Flex>
             </Button>
+            <Button
+              id="redeem"
+              data-border="rounded"
+              href="/redeem"
+              variant="secondary"
+              size="l"
+              arrowIcon
+            >
+              <Flex gap="8" vertical="center">
+                Redeem
+              </Flex>
+            </Button>
+            </Flex>
           </RevealFx>
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
-      {routes["/blog"] && (
-        <Flex fillWidth gap="24" mobileDirection="column">
-          <Flex flex={1} paddingLeft="l">
-            <Heading as="h2" variant="display-strong-xs" wrap="balance">
-              Latest from the blog
-            </Heading>
-          </Flex>
-          <Flex flex={3} paddingX="20">
-            <Posts range={[1, 2]} columns="2" />
-          </Flex>
-        </Flex>
-      )}
-      <Projects range={[2]} />
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
     </Column>
   );
