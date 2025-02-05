@@ -1,7 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { Column, Flex, Heading, Text, Input, Button, RevealFx } from "@/once-ui/components";
+import {
+  Column,
+  Flex,
+  Heading,
+  Text,
+  Input,
+  Button,
+  RevealFx,
+} from "@/once-ui/components";
 import { Spinner } from "@/once-ui/components/Spinner"; // Assuming you have a Spinner component
 
 const LoginPage = () => {
@@ -28,22 +36,56 @@ const LoginPage = () => {
   };
 
   return (
-    <Column fillWidth paddingY="l" gap="m" horizontal="center" vertical="center" style={{ textAlign: "center" }}>
+    <Column
+      fillWidth
+      paddingY="l"
+      gap="m"
+      horizontal="center"
+      vertical="center"
+      style={{ textAlign: "center" }}
+    >
       <Column maxWidth="m" horizontal="center" vertical="center">
-        <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="m">
+        <RevealFx translateY="4" fillWidth horizontal="center">
+          <Heading wrap="balance" variant="display-strong-xs">
+            void
+          </Heading>
+        </RevealFx>
+        <RevealFx
+          translateY="4"
+          fillWidth
+          horizontal="center"
+          paddingBottom="m"
+        >
           <Heading wrap="balance" variant="display-strong-l">
             Login
           </Heading>
         </RevealFx>
 
-        <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="m">
-          <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl" paddingBottom="m">
-            Enter your credentials to access your account
+        <RevealFx
+          translateY="8"
+          delay={0.2}
+          fillWidth
+          horizontal="center"
+          paddingBottom="m"
+        >
+          <Text
+            wrap="balance"
+            onBackground="neutral-weak"
+            variant="heading-default-xl"
+            paddingBottom="m"
+          >
+            Enter your credentials to access your dashboard
           </Text>
         </RevealFx>
 
         {/* Reverted Input Fields to their previous look */}
-        <RevealFx translateY="12" delay={0.4} fillWidth horizontal="center" paddingBottom="m">
+        <RevealFx
+          translateY="12"
+          delay={0.4}
+          fillWidth
+          horizontal="center"
+          paddingBottom="m"
+        >
           <Input
             id="email"
             label="Email Address"
@@ -53,7 +95,13 @@ const LoginPage = () => {
           />
         </RevealFx>
 
-        <RevealFx translateY="16" delay={0.6} fillWidth horizontal="center" paddingBottom="m">
+        <RevealFx
+          translateY="16"
+          delay={0.6}
+          fillWidth
+          horizontal="center"
+          paddingBottom="m"
+        >
           <Input
             id="password"
             label="Password"
@@ -65,14 +113,29 @@ const LoginPage = () => {
         </RevealFx>
 
         {errorMessage && (
-          <RevealFx translateY="20" delay={0.8} fillWidth horizontal="center" paddingBottom="m">
-            <Text variant="body-default-m" style={{ color: "red", fontWeight: "bold" }}>
+          <RevealFx
+            translateY="20"
+            delay={0.8}
+            fillWidth
+            horizontal="center"
+            paddingBottom="m"
+          >
+            <Text
+              variant="body-default-m"
+              style={{ color: "red", fontWeight: "bold" }}
+            >
               {errorMessage}
             </Text>
           </RevealFx>
         )}
 
-        <RevealFx translateY="24" delay={1} fillWidth horizontal="center" paddingBottom="m">
+        <RevealFx
+          translateY="24"
+          delay={1}
+          fillWidth
+          horizontal="center"
+          paddingBottom="m"
+        >
           <Button
             variant="primary"
             size="l"
@@ -88,12 +151,6 @@ const LoginPage = () => {
               "Login"
             )}
           </Button>
-        </RevealFx>
-
-        <RevealFx translateY="20" delay={1.2} fillWidth horizontal="center" paddingBottom="m">
-          <Text variant="body-default-m" style={{ color: "#6c757d" }}>
-            Forgot your password? <a href="/reset-password">Reset it here.</a>
-          </Text>
         </RevealFx>
       </Column>
     </Column>

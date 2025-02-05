@@ -11,6 +11,7 @@ import {
   Column,
 } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
+import { InlineCode } from "@/once-ui/components";
 
 import { baseURL, routes } from "@/app/resources";
 import { home, about, person, newsletter } from "@/app/resources/content";
@@ -28,6 +29,15 @@ export default function ProductPage() {
       style={{ textAlign: "center" }}
     >
       <Column maxWidth="m" horizontal="center" vertical="center">
+      <RevealFx
+          translateY="4"
+          fillWidth
+          horizontal="center"
+        >
+          <Heading wrap="balance" variant="display-strong-s" >
+            void
+          </Heading>
+        </RevealFx>
         <RevealFx
           translateY="4"
           fillWidth
@@ -48,14 +58,14 @@ export default function ProductPage() {
           <Text
             wrap="balance"
             onBackground="neutral-weak"
-            variant="heading-default-xl"
+            variant="heading-default-xl"  
             style={{ textAlign: "center" }}
             paddingBottom="m"
           >
-            Due to unbearable demand the shop is currently <br /> closed, stay
+            Due to unbearable demand the shop is currently <br /> <InlineCode>closed</InlineCode>, stay
             tuned for updates!
           </Text>
-        </RevealFx>
+        </RevealFx> 
         <RevealFx
           translateY="8"
           delay={0.2}

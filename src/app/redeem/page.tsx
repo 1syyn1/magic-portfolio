@@ -58,6 +58,12 @@ export default function KeyRedemptionPage() {
       style={{ textAlign: "center" }}
     >
       <Column maxWidth="m" horizontal="center" vertical="center">
+        <RevealFx translateY="4" fillWidth horizontal="center">
+          <Heading wrap="balance" variant="display-strong-s">
+            void
+          </Heading>
+        </RevealFx>
+
         <RevealFx
           translateY="4"
           fillWidth
@@ -74,13 +80,12 @@ export default function KeyRedemptionPage() {
           delay={0.2}
           fillWidth
           horizontal="center"
-          paddingBottom="m"
         >
           <Text
             wrap="balance"
             onBackground="neutral-weak"
             variant="heading-default-xl"
-            paddingBottom="m"
+            paddingBottom="xs"
           >
             {isValidKey ? (
               "We’re processing your download..."
@@ -88,6 +93,28 @@ export default function KeyRedemptionPage() {
               <>
                 Enter the key you received to redeem{" "}
                 <InlineCode>Void</InlineCode>.
+              </>
+            )}
+          </Text>
+        </RevealFx>
+
+        <RevealFx
+          translateY="8"
+          delay={0.2}
+          fillWidth
+          horizontal="center"
+          paddingBottom="m"
+        >
+          <Text
+            wrap="balance"
+            onBackground="neutral-weak"
+            variant="heading-default-s"
+            paddingBottom="m"
+          >
+            {isValidKey ? (
+              "Purchased 02/05/25 for $4.99 · void6c8de65cfa014cd7cca3ae369de910d6"
+            ) : (
+              <>
               </>
             )}
           </Text>

@@ -3,6 +3,9 @@ import { Column, Heading, Text } from "@/once-ui/components";
 export default function NotFound() {
   return (
     <Column as="section" fill center paddingBottom="160">
+      <Text variant="display-strong-s">
+        void
+      </Text>
       <Text marginBottom="s" variant="display-strong-xl">
         404
       </Text>
