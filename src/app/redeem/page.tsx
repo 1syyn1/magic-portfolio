@@ -75,12 +75,7 @@ export default function KeyRedemptionPage() {
           </Heading>
         </RevealFx>
 
-        <RevealFx
-          translateY="8"
-          delay={0.2}
-          fillWidth
-          horizontal="center"
-        >
+        <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center">
           <Text
             wrap="balance"
             onBackground="neutral-weak"
@@ -103,21 +98,19 @@ export default function KeyRedemptionPage() {
           delay={0.2}
           fillWidth
           horizontal="center"
-          paddingBottom="m"
+          paddingBottom="s"
         >
-          <Text
-            wrap="balance"
-            onBackground="neutral-weak"
-            variant="heading-default-s"
-            paddingBottom="m"
-          >
-            {isValidKey ? (
-              "Purchased 02/05/25 for $4.99 · void6c8de65cfa014cd7cca3ae369de910d6"
-            ) : (
-              <>
-              </>
-            )}
-          </Text>
+          {isValidKey && (
+            <Text
+              wrap="balance"
+              onBackground="neutral-weak"
+              variant="heading-default-s"
+              paddingBottom="m"
+            >
+              Purchased 02/05/25 for $4.99 ·
+              void6c8de65cfa014cd7cca3ae369de910d6
+            </Text>
+          )}
         </RevealFx>
 
         <RevealFx
@@ -127,19 +120,16 @@ export default function KeyRedemptionPage() {
           horizontal="center"
           paddingBottom="m"
         >
-          <Text
-            wrap="balance"
-            onBackground="neutral-weak"
-            variant="heading-default-s"
-            paddingBottom="m"
-          >
-            {isValidKey ? (
-              "The Password is: Void"
-            ) : (
-              <>
-              </>
-            )}
-          </Text>
+          {isValidKey && (
+            <Text
+              wrap="balance"
+              onBackground="neutral-weak"
+              variant="heading-default-s"
+              paddingBottom="m"
+            >
+              The Password is: Void
+            </Text>
+          )}
         </RevealFx>
 
         {!isValidKey && (
