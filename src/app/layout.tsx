@@ -17,13 +17,13 @@ import { Background, Column, Flex, ToastProvider } from "@/once-ui/components";
 export async function generateMetadata() {
   return {
     metadataBase: new URL(`https://${baseURL}`),
-    title: home.title,
-    description: home.description,
+    title: `Void`,
+    description: `The most used external on the market.`,
     openGraph: {
-      title: `${person.firstName}'s Portfolio`,
-      description: "Portfolio website showcasing my work.",
+      title: `Void`,
+      description: `The most used external on the market.`,
       url: baseURL,
-      siteName: `${person.firstName}'s Portfolio`,
+      siteName: `Void`,
       locale: "en_US",
       type: "website",
     },
